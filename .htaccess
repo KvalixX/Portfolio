@@ -1,0 +1,114 @@
+# ============================================================
+# SECURITY CONFIGURATION FOR APACHE SERVERS
+# ============================================================
+
+# --- Disable server signature ---
+ServerSignature Off
+
+# --- Disable directory browsing ---
+Options -Indexes
+
+# ============================================================
+# SECURITY HEADERS
+# ============================================================
+
+# --- Content Security Policy ---
+Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io; upgrade-insecure-requests;"
+
+# --- Prevent clickjacking ---
+Header always set X-Frame-Options "DENY"
+
+# --- Prevent MIME-type sniffing ---
+Header always set X-Content-Type-Options "nosniff"
+
+# --- XSS Protection ---
+Header always set X-XSS-Protection "1; mode=block"
+
+# --- Referrer Policy ---
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+# --- Permissions Policy ---
+Header always set Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+
+# --- Strict Transport Security (HSTS) ---
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+# --- Remove potentially identifying headers ---
+Header always unset X-Powered-By
+Header always unset Server
+
+# ============================================================
+# CACHING & COMPRESSION
+# ============================================================
+
+# --- Enable Gzip compression ---
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json
+</IfModule>
+
+# --- Cache control for static assets ---
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+# ============================================================
+# URL REWRITING & REDIRECTS
+# ============================================================
+
+# --- Force HTTPS ---
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Redirect HTTP to HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+    
+    # Remove trailing slashes
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [R=301,L]
+    
+    # Protect sensitive files
+    RewriteRule ^\. - [F,L]
+</IfModule>
+
+# ============================================================
+# FILE PROTECTION
+# ============================================================
+
+# --- Deny access to sensitive files ---
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist|orig|save)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# --- Protect specific files ---
+<Files "script.js">
+    Order allow,deny
+    Allow from all
+</Files>
+
+<Files "style.css">
+    Order allow,deny
+    Allow from all
+</Files>
+
+<Files "sections.css">
+    Order allow,deny
+    Allow from all
+</Files>
+
+<Files "index.html">
+    Order allow,deny
+    Allow from all
+</Files>

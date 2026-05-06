@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <meta name="description" content="Personal portfolio — Developer & Designer crafting premium digital experiences." />
+
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io; upgrade-insecure-requests;" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()" />
+  <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+  <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" integrity="sha384-4fyR9IYdGQJj9/hF6zIX9e7bK1rH9D8E+m4a9nsF5RbqRmTT3dI/1HbIfs1zF1yH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="sections.css" />
+</head>
+
+<body>
+
+  <!-- Noscript warning for users without JavaScript -->
+  <noscript>
+    <div style="position:fixed; top:0; left:0; width:100%; background:#dc2626; color:#fff; padding:15px; text-align:center; z-index:99999; font-family:sans-serif;">
+      JavaScript est désactivé. Certaines fonctionnalités de ce portfolio peuvent ne pas fonctionner correctement.
+    </div>
+  </noscript>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="spinner"></div>
+    <div class="preloader-bg-lines">
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+
+
+  <!-- HEADER / NAVBAR -->
+  <header class="main-header" id="main-header">
+    <div class="header-container">
+      <a href="#hero" class="header-logo">
+        <span class="logo-top" data-i18n="logo.top">LAKNIFLI</span>
+        <span class="logo-bottom" data-i18n="logo.bottom">KHALIL</span>
+      </a>
+
+      <nav class="header-nav" id="header-nav">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+          <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+          <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="#certifications" class="nav-link" data-i18n="nav.certifications">Certifications</a></li>
+          <li><a href="#contact" class="nav-cta" data-i18n="nav.contact">Contact Me</a></li>
+        </ul>
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+          <button class="lang-current" id="lang-toggle" aria-label="Select language">
+            <span class="lang-flag" id="current-flag">🇬🇧</span>
+            <span class="lang-code" id="current-code">EN</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            <button class="lang-option" data-lang="en" data-flag="🇬🇧">
+              <span class="lang-option-flag">🇬🇧</span>
+              <span class="lang-option-name">English</span>
+            </button>
+            <button class="lang-option" data-lang="fr" data-flag="🇫🇷">
+              <span class="lang-option-flag">🇫🇷</span>
+              <span class="lang-option-name">Français</span>
+            </button>
+            <button class="lang-option" data-lang="es" data-flag="🇪🇸">
+              <span class="lang-option-flag">🇪🇸</span>
+              <span class="lang-option-name">Español</span>
+            </button>
+            <button class="lang-option" data-lang="ar" data-flag="🇸🇦">
+              <span class="lang-option-flag">🇸🇦</span>
+              <span class="lang-option-name">العربية</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+
+    <!-- TOPOGRAPHIC BACKGROUND -->
+    <canvas id="topo-canvas" class="topo-canvas"></canvas>
+
+    <!-- BLOB SHAPES -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- HERO CONTENT -->
+    <div class="hero-content" id="hero-content">
+      <!-- LEFT: Text + CTA -->
+      <div class="hero-left">
+        <h1 class="hero-title">
+          <span class="hero-title-line" data-i18n="hero.name1">Laknifli</span>
+          <span class="hero-title-line" data-i18n="hero.name2">Khalil</span>
+        </h1>
+        <p class="hero-desc" data-i18n="hero.description">
+          Future Computer Science & Networks Engineer. Full-Stack Developer passionate about AI.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="hero-cta-primary" data-i18n="hero.contactBtn">Contact Me</a>
+          <a href="CV Khalil Laknifli.pdf" download target="_blank" class="hero-cta-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            <span data-i18n="hero.downloadCV">Download CV</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Portrait -->
+      <div class="hero-right">
+        <div class="portrait-wrap" id="portrait-wrap">
+          <img src="images/hero-portrait.png" alt="Portrait" class="portrait-img" id="portrait-img" />
+          <img src="images/robot-portrait.png" alt="Robot Portrait" class="portrait-robot" id="portrait-robot" />
+          <div class="scanner-line" id="scanner-line"></div>
+          <div class="scanner-hud" id="scanner-hud">
+            <div class="hud-corner top-left"></div>
+            <div class="hud-corner top-right"></div>
+            <div class="hud-corner bottom-left"></div>
+            <div class="hud-corner bottom-right"></div>
+            <div class="hud-data">
+              <span class="hud-tag">ID_SCAN</span>
+              <span class="hud-value">0923-XQ</span>
+              <span class="hud-status">ANALYZING...</span>
+            </div>
+          </div>
+          <div class="mesh-overlay" id="mesh-overlay">
+            <svg class="mesh-svg" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+              <g class="mesh-layer layer-1" opacity="0.18">
+                <ellipse cx="200" cy="130" rx="120" ry="90" fill="none" stroke="#222" stroke-width="1" />
+                <ellipse cx="200" cy="130" rx="90" ry="65" fill="none" stroke="#222" stroke-width="0.8" />
+                <ellipse cx="200" cy="130" rx="60" ry="40" fill="none" stroke="#222" stroke-width="0.6" />
+                <line x1="80" y1="130" x2="320" y2="130" stroke="#222" stroke-width="0.8" />
+                <line x1="200" y1="40" x2="200" y2="220" stroke="#222" stroke-width="0.8" />
+                <line x1="110" y1="72" x2="290" y2="188" stroke="#222" stroke-width="0.5" />
+                <line x1="290" y1="72" x2="110" y2="188" stroke="#222" stroke-width="0.5" />
+                <line x1="80" y1="105" x2="320" y2="105" stroke="#222" stroke-width="0.4" />
+                <line x1="80" y1="155" x2="320" y2="155" stroke="#222" stroke-width="0.4" />
+                <line x1="130" y1="40" x2="130" y2="220" stroke="#222" stroke-width="0.4" />
+                <line x1="270" y1="40" x2="270" y2="220" stroke="#222" stroke-width="0.4" />
+              </g>
+              <g class="mesh-layer layer-2" opacity="0.12">
+                <path d="M200,50 Q280,80 300,130 Q280,180 200,210 Q120,180 100,130 Q120,80 200,50Z" fill="none"
+                  stroke="#333" stroke-width="1.2" />
+                <path d="M200,70 Q260,95 275,130 Q260,165 200,190 Q140,165 125,130 Q140,95 200,70Z" fill="none"
+                  stroke="#333" stroke-width="0.8" />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO RICH DETAILS -->
+    <div class="hero-rich-lines" aria-hidden="true">
+      <span class="hero-line hero-line-h1"></span>
+      <span class="hero-line hero-line-h2"></span>
+      <span class="hero-line hero-line-v1"></span>
+      <span class="hero-line hero-line-v2"></span>
+      <span class="hero-line hero-line-h3"></span>
+      <span class="hero-line hero-line-h4"></span>
+      <span class="hero-line hero-line-v3"></span>
+      <span class="hero-line hero-line-v4"></span>
+      <span class="hero-line hero-line-d1"></span>
+      <span class="hero-line hero-line-d2"></span>
+      <span class="hero-ring hero-ring-1"></span>
+      <span class="hero-ring hero-ring-2"></span>
+      <span class="hero-point hero-point-1"></span>
+      <span class="hero-point hero-point-2"></span>
+      <span class="hero-point hero-point-3"></span>
+      <span class="hero-point hero-point-4"></span>
+      <span class="hero-point hero-point-5"></span>
+      <span class="hero-point hero-point-6"></span>
+      <span class="hero-point hero-point-7"></span>
+      <span class="hero-point hero-point-8"></span>
+      <span class="hero-point hero-point-9"></span>
+      <span class="hero-point hero-point-10"></span>
+      <span class="hero-shine hero-shine-1"></span>
+      <span class="hero-shine hero-shine-2"></span>
+      <span class="hero-shine hero-shine-3"></span>
+      <span class="hero-shine hero-shine-4"></span>
+      <span class="hero-scan hero-scan-1"></span>
+      <span class="hero-scan hero-scan-2"></span>
+      <span class="hero-scan hero-scan-3"></span>
+      <span class="hero-drop hero-drop-1"></span>
+      <span class="hero-drop hero-drop-2"></span>
+      <span class="hero-drop hero-drop-3"></span>
+      <span class="hero-drop hero-drop-4"></span>
+    </div>
+
+
+
+    <!-- SIDE TEXT -->
+    <div class="side-text left-side" data-i18n="hero.sideText">LAKNIFLI KHALIL</div>
+    <div class="side-text right-side">DIGITAL PORTFOLIO &copy; 2026</div>
+
+    <!-- SCROLL HINT -->
+    <div class="scroll-hint">
+      <span class="scroll-text" data-i18n="hero.scroll">SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+
+    <!-- CUSTOM CURSOR -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-follower"></div>
+
+    <!-- SVG FILTERS -->
+    <svg width="0" height="0" style="position: absolute;">
+      <filter id="remove-white" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="1 0 0 0 0
+                                             0 1 0 0 0
+                                             0 0 1 0 0
+                                             -1.1 -1.1 -1.1 1 1.05" />
+      </filter>
+    </svg>
+
+  </section>
+
+
+  <!-- ============================================================
+       ABOUT ME / À PROPOS SECTION
+       ============================================================ -->
+  <section class="about" id="about">
+
+    <!-- Section label -->
+    <div class="section-label">
+      <span class="section-number">02</span>
+      <span class="section-divider"></span>
+      <span class="section-title-tag" data-i18n="about.sectionTitle">ABOUT</span>
+    </div>
+
+    <div class="about-content">
+      <!-- MAIN: Narrative & Stats -->
+      <div class="about-main reveal reveal-left">
+        <p class="about-eyebrow" data-i18n="about.eyebrow">Who am I?</p>
+        <h2 class="about-heading">
+          <span data-i18n="about.heading.line1">Turning ideas</span><br />
+          <span data-i18n="about.heading.line2">into <span class="about-heading-accent">Digital</span></span><br />
+          <span data-i18n="about.heading.line3">Realities.</span>
+        </h2>
+        <div class="about-text-wrap">
+          <p class="about-text" data-i18n="about.text1">
+            Future <strong>Computer Science & Networks Engineer</strong> at EMSI, I am a Full-Stack Developer
+            passionate about the intersection between code and <strong>Artificial Intelligence</strong>.
+          </p>
+          <p class="about-text" data-i18n="about.text2">
+            For over 2 years, I have been designing digital solutions that combine technical performance and refined
+            aesthetics. My approach is based on insatiable curiosity and a constant desire to push the boundaries
+            of what's possible.
+          </p>
+        </div>
+
+
+
+        <a href="#contact" class="about-cta">
+          <span data-i18n="about.contactBtn">Contact Me</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- SIDE: Parcours Timeline -->
+      <div class="about-side reveal reveal-up" style="--delay: 0.15s">
+        <div class="parcours-box">
+          <h3 class="parcours-title" data-i18n="about.journey.title">My Journey</h3>
+          <div class="parcours-list">
+
+            <div class="p-item">
+              <div class="p-marker"></div>
+              <div class="p-content">
+                <span class="p-date">2025 — <span data-i18n="about.journey.present">Present</span></span>
+                <h4 class="p-name" data-i18n="about.journey.item1.title">Computer Science & Networks Engineering</h4>
+                <p class="p-school">EMSI · Marrakech</p>
+              </div>
+            </div>
+
+            <div class="p-item">
+              <div class="p-marker"></div>
+              <div class="p-content">
+                <span class="p-date">2023 — 2025</span>
+                <h4 class="p-name" data-i18n="about.journey.item2.title">Full-Stack Digital Development</h4>
+                <p class="p-school">ISGI · Marrakech</p>
+              </div>
+            </div>
+
+            <div class="p-item">
+              <div class="p-marker"></div>
+              <div class="p-content">
+                <span class="p-date">2023</span>
+                <h4 class="p-name" data-i18n="about.journey.item3.title">Baccalaureate in Physical Sciences</h4>
+                <p class="p-school">Morocco</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       SKILLS / TECH STACK SECTION
+       ============================================================ -->
+  <section class="skills" id="skills">
+
+    <!-- Section label -->
+    <div class="section-label">
+      <span class="section-number">03</span>
+      <span class="section-divider"></span>
+      <span class="section-title-tag" data-i18n="skills.sectionTitle">TECH STACK</span>
+    </div>
+
+    <!-- Intro row -->
+    <div class="skills-intro reveal reveal-up">
+      <h2 class="skills-heading"><span data-i18n="skills.heading1">Skills &</span> <span class="skills-heading-accent" data-i18n="skills.heading2">Technologies</span></h2>
+      <p class="skills-sub" data-i18n="skills.subtitle">Versatile expertise covering development, infrastructure and AI.</p>
+    </div>
+
+    <!-- Skills Marquee Container -->
+    <div class="skills-marquee-wrap reveal reveal-up">
+
+      <!-- Row 1: Frontend & Languages -->
+      <div class="marquee-row" style="--speed: 35s">
+        <div class="marquee-track">
+          <div class="skill-tag"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+          <div class="skill-tag"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
+          <div class="skill-tag"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+          <div class="skill-tag"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+          <div class="skill-tag"><i class="devicon-react-original colored"></i><span>React.js</span></div>
+          <div class="skill-tag"><i class="devicon-nextjs-original-wordmark colored"></i><span>Next.js</span></div>
+          <div class="skill-tag"><i class="devicon-vuejs-plain colored"></i><span>Vue.js</span></div>
+          <div class="skill-tag"><i class="devicon-tailwindcss-original colored"></i><span>Tailwind CSS</span></div>
+          <div class="skill-tag"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+          <!-- Duplicate for seamless loop -->
+          <div class="skill-tag"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+          <div class="skill-tag"><i class="devicon-typescript-plain colored"></i><span>TypeScript</span></div>
+          <div class="skill-tag"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+          <div class="skill-tag"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+          <div class="skill-tag"><i class="devicon-react-original colored"></i><span>React.js</span></div>
+          <div class="skill-tag"><i class="devicon-nextjs-original-wordmark colored"></i><span>Next.js</span></div>
+          <div class="skill-tag"><i class="devicon-vuejs-plain colored"></i><span>Vue.js</span></div>
+          <div class="skill-tag"><i class="devicon-tailwindcss-original colored"></i><span>Tailwind CSS</span></div>
+          <div class="skill-tag"><i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span></div>
+        </div>
+      </div>
+
+      <!-- Row 2: Backend & DBs (Reverse) -->
+      <div class="marquee-row reverse" style="--speed: 40s">
+        <div class="marquee-track">
+          <div class="skill-tag"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+          <div class="skill-tag"><i class="devicon-express-original colored"></i><span>Express.js</span></div>
+          <div class="skill-tag"><i class="devicon-nestjs-plain colored"></i><span>NestJS</span></div>
+          <div class="skill-tag"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+          <div class="skill-tag"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
+          <div class="skill-tag"><i class="devicon-laravel-plain colored"></i><span>Laravel</span></div>
+          <div class="skill-tag"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+          <div class="skill-tag"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+          <div class="skill-tag"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+          <div class="skill-tag"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+          <div class="skill-tag"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></div>
+          <!-- Duplicate -->
+          <div class="skill-tag"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+          <div class="skill-tag"><i class="devicon-express-original colored"></i><span>Express.js</span></div>
+          <div class="skill-tag"><i class="devicon-nestjs-plain colored"></i><span>NestJS</span></div>
+          <div class="skill-tag"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+          <div class="skill-tag"><i class="devicon-php-plain colored"></i><span>PHP</span></div>
+          <div class="skill-tag"><i class="devicon-laravel-plain colored"></i><span>Laravel</span></div>
+          <div class="skill-tag"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+          <div class="skill-tag"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+          <div class="skill-tag"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+          <div class="skill-tag"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+          <div class="skill-tag"><i class="devicon-mongodb-plain colored"></i><span>MongoDB</span></div>
+        </div>
+      </div>
+
+      <!-- Row 3: Tools & Others -->
+      <div class="marquee-row" style="--speed: 45s">
+        <div class="marquee-track">
+          <div class="skill-tag"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+          <div class="skill-tag"><i class="devicon-github-original colored"></i><span>GitHub</span></div>
+          <div class="skill-tag"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+          <div class="skill-tag"><i class="devicon-prisma-plain colored"></i><span>Prisma</span></div>
+          <div class="skill-tag"><i class="devicon-graphql-plain colored"></i><span>GraphQL</span></div>
+          <div class="skill-tag"><i class="devicon-jira-plain colored"></i><span>Jira</span></div>
+          <div class="skill-tag">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#6772E5">
+              <path
+                d="M13.962 8.885c-2.455 0-3.828 1.28-3.828 3.446 0 3.514 4.869 2.939 4.869 5.481 0 .943-.804 1.485-2.092 1.485-1.905 0-3.918-.744-5.446-1.545l-.651 3.864c1.674.809 3.947 1.498 6.048 1.498 4.413 0 6.67-2.152 6.67-5.417 0-3.76-4.903-3.203-4.903-5.539 0-.868.738-1.32 1.854-1.32 1.692 0 3.503.56 4.94 1.28l.607-3.846a13.316 13.316 0 0 0-5.068-1.387zm-11.411 1.39h4.27l.832-4.932h-4.27zm-.829 4.921h4.27l.832-4.932h-4.27zm-.832 4.932h4.27l.832-4.932h-4.27z" />
+            </svg>
+            <span>Stripe</span>
+          </div>
+          <div class="skill-tag">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF6384" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3v18h18"></path>
+              <path d="m19 9-5 5-4-4-3 3"></path>
+            </svg>
+            <span>Chart.js</span>
+          </div>
+          <div class="skill-tag">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+            <span>Agile / Scrum</span>
+          </div>
+          <div class="skill-tag">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <span>CI / CD</span>
+          </div>
+          <div class="skill-tag">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+              <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+              <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+            </svg>
+            <span>Networking</span>
+          </div>
+          <!-- Duplicate -->
+          <div class="skill-tag"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+          <div class="skill-tag"><i class="devicon-github-original colored"></i><span>GitHub</span></div>
+          <div class="skill-tag"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+          <div class="skill-tag"><i class="devicon-prisma-plain colored"></i><span>Prisma</span></div>
+          <div class="skill-tag"><i class="devicon-graphql-plain colored"></i><span>GraphQL</span></div>
+          <div class="skill-tag"><i class="devicon-jira-plain colored"></i><span>Jira</span></div>
+          <div class="skill-tag">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#6772E5">
+              <path
+                d="M13.962 8.885c-2.455 0-3.828 1.28-3.828 3.446 0 3.514 4.869 2.939 4.869 5.481 0 .943-.804 1.485-2.092 1.485-1.905 0-3.918-.744-5.446-1.545l-.651 3.864c1.674.809 3.947 1.498 6.048 1.498 4.413 0 6.67-2.152 6.67-5.417 0-3.76-4.903-3.203-4.903-5.539 0-.868.738-1.32 1.854-1.32 1.692 0 3.503.56 4.94 1.28l.607-3.846a13.316 13.316 0 0 0-5.068-1.387zm-11.411 1.39h4.27l.832-4.932h-4.27zm-.829 4.921h4.27l.832-4.932h-4.27zm-.832 4.932h4.27l.832-4.932h-4.27z" />
+            </svg>
+            <span>Stripe</span>
+          </div>
+          <div class="skill-tag">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF6384" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3v18h18"></path>
+              <path d="m19 9-5 5-4-4-3 3"></path>
+            </svg>
+            <span>Chart.js</span>
+          </div>
+          <div class="skill-tag">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="m9 12 2 2 4-4"></path>
+            </svg>
+            <span>Agile / Scrum</span>
+          </div>
+          <div class="skill-tag">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <span>CI / CD</span>
+          </div>
+          <div class="skill-tag">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+              <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+              <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+            </svg>
+            <span>Networking</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.skills-marquee-wrap -->
+
+  </section>
+  <!-- ============================================================
+       PROJECTS SECTION
+       ============================================================ -->
+  <section class="projects" id="projects">
+
+    <div class="section-label">
+      <span class="section-number">04</span>
+      <span class="section-divider"></span>
+      <span class="section-title-tag" data-i18n="projects.sectionTitle">PROJECTS</span>
+    </div>
+
+    <div class="projects-intro reveal reveal-up">
+      <h2 class="projects-heading"><span data-i18n="projects.heading1">My</span> <span class="projects-heading-accent" data-i18n="projects.heading2">Projects</span></h2>
+      <p class="projects-sub" data-i18n="projects.subtitle">Concrete solutions I have designed, developed and deployed.</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- Project 1: KIRA -->
+      <div class="project-card reveal reveal-up" style="--delay:0.05s">
+        <div class="project-preview">
+          <img src="images/Kira.png" alt="KIRA Phishing Simulation" class="project-img">
+          <div class="project-preview-overlay">
+            <div class="preview-code-lines">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <span class="project-number">01</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">KIRA — Phishing Simulation</h3>
+          <p class="project-desc" data-i18n="projects.proj1.desc">AI-powered phishing simulation platform with human risk scoring: AI-generated phishing emails and sending, user behavior analysis, with AI-generated personalized training based on risk level.</p>
+          <div class="project-tech">
+            <span class="pt-chip">React</span>
+            <span class="pt-chip">Laravel</span>
+            <span class="pt-chip">AI Integration</span>
+            <span class="pt-chip">MySQL</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="proj-btn proj-btn-primary disabled" id="proj1-demo">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              <span data-i18n="projects.liveDemo">Live Demo</span>
+            </a>
+            <a href="https://github.com/KvalixX/AI-Powered-Phishing-Simulation-Human-Risk-Scoring-Platform"
+              target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn-secondary" id="proj1-code">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+              <span data-i18n="projects.code">Code</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: marocvoyage -->
+      <div class="project-card reveal reveal-up" style="--delay:0.12s">
+        <div class="project-preview">
+          <img src="images/Voyagemaroc.png" alt="marocvoyage" class="project-img">
+          <div class="project-preview-overlay">
+            <div class="preview-dots-grid"></div>
+          </div>
+          <span class="project-number">02</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">marocvoyage</h3>
+          <p class="project-desc" data-i18n="projects.proj2.desc">Travel agency: Online booking for tours, excursions & events with quote requests and admin space for managing offers and reservations.</p>
+          <div class="project-tech">
+            <span class="pt-chip">Laravel</span>
+            <span class="pt-chip">MySQL</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="proj-btn proj-btn-primary disabled" id="proj2-demo">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              <span data-i18n="projects.liveDemo">Live Demo</span>
+            </a>
+            <a href="#" class="proj-btn proj-btn-secondary disabled" id="proj2-code">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+              <span data-i18n="projects.code">Code</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: RoyalRideMaroc -->
+      <div class="project-card reveal reveal-up" style="--delay:0.19s">
+        <div class="project-preview">
+          <img src="images/royalridemaroc.png" alt="RoyalRideMaroc" class="project-img">
+          <div class="project-preview-overlay">
+            <div class="preview-wave"></div>
+          </div>
+          <span class="project-number">03</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">RoyalRideMaroc</h3>
+          <p class="project-desc" data-i18n="projects.proj3.desc">Private transport agency: Trip booking, ride and driver management, as well as service optimization via a statistical dashboard.</p>
+          <div class="project-tech">
+            <span class="pt-chip">React</span>
+            <span class="pt-chip">Node.js</span>
+            <span class="pt-chip">MySQL</span>
+          </div>
+          <div class="project-links">
+            <a href="https://royalridemaroc.com/" target="_blank" rel="noopener noreferrer"
+              class="proj-btn proj-btn-primary" id="proj3-demo">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              <span data-i18n="projects.liveDemo">Live Demo</span>
+            </a>
+            <a href="#" class="proj-btn proj-btn-secondary disabled" id="proj3-code">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+              <span data-i18n="projects.code">Code</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Move & Shop -->
+      <div class="project-card reveal reveal-up" style="--delay:0.26s">
+        <div class="project-preview">
+          <img src="images/moveshop.png" alt="Move & Shop Gym E-commerce" class="project-img">
+          <div class="project-preview-overlay">
+            <div class="preview-circles"></div>
+          </div>
+          <span class="project-number">04</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">Move & Shop</h3>
+          <p class="project-desc" data-i18n="projects.proj4.desc">Gym management platform with e-commerce section for supplements: member management, classes, subscriptions, purchases and trainer applications, with analytical admin dashboard.</p>
+          <div class="project-tech">
+            <span class="pt-chip">PHP</span>
+            <span class="pt-chip">MySQL</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="proj-btn proj-btn-primary disabled" id="proj4-demo">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              <span data-i18n="projects.liveDemo">Live Demo</span>
+            </a>
+            <a href="#" class="proj-btn proj-btn-secondary disabled" id="proj4-code">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+              <span data-i18n="projects.code">Code</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5: Luxurymarocvoyage -->
+      <div class="project-card reveal reveal-up" style="--delay:0.33s">
+        <div class="project-preview">
+          <img src="images/Luxurymarocvoyage.png" alt="LuxuryMarocVoyage" class="project-img">
+          <div class="project-preview-overlay">
+            <div class="preview-bars"></div>
+          </div>
+          <span class="project-number">05</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">Luxurymarocvoyage</h3>
+          <p class="project-desc" data-i18n="projects.proj5.desc">Travel agency: Online booking for tours, excursions & events with quote requests and admin space for managing offers and reservations.</p>
+          <div class="project-tech">
+            <span class="pt-chip">PHP</span>
+            <span class="pt-chip">MySQL</span>
+          </div>
+          <div class="project-links">
+            <a href="https://luxurymarocvoyage.com/" target="_blank" rel="noopener noreferrer"
+              class="proj-btn proj-btn-primary" id="proj5-demo">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              <span data-i18n="projects.liveDemo">Live Demo</span>
+            </a>
+            <a href="#" class="proj-btn proj-btn-secondary disabled" id="proj5-code">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+              <span data-i18n="projects.code">Code</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6: MoulWeb -->
+      <div class="project-card reveal reveal-up" style="--delay:0.40s">
+        <div class="project-preview">
+          <img src="images/moulweb.png" alt="MoulWeb Creative Service" class="project-img">
+          <div class="project-preview-overlay">
+            <div class="preview-hex"></div>
+          </div>
+          <span class="project-number">06</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-title">MoulWeb</h3>
+          <p class="project-desc" data-i18n="projects.proj6.desc">Web agency: Design and development of custom websites for various clients, integrating front-end, back-end and UX/UI optimization to ensure performance and user experience.</p>
+          <div class="project-tech">
+            <span class="pt-chip">React</span>
+            <span class="pt-chip">Node.js</span>
+            <span class="pt-chip">MySQL</span>
+          </div>
+          <div class="project-links">
+            <a href="https://moulweb.com/" target="_blank" rel="noopener noreferrer" class="proj-btn proj-btn-primary"
+              id="proj6-demo">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+              <span data-i18n="projects.liveDemo">Live Demo</span>
+            </a>
+            <a href="#" class="proj-btn proj-btn-secondary disabled" id="proj6-code">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+              </svg>
+              <span data-i18n="projects.code">Code</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.projects-grid -->
+  </section>
+
+
+
+
+
+  <!-- ============================================================
+       CERTIFICATIONS SECTION
+       ============================================================ -->
+  <section class="certifications" id="certifications">
+
+    <div class="section-label">
+      <span class="section-number">05</span>
+      <span class="section-divider"></span>
+      <span class="section-title-tag" data-i18n="certifications.sectionTitle">CERTIFICATIONS</span>
+    </div>
+
+    <div class="cert-intro reveal reveal-up">
+      <h2 class="cert-heading"><span data-i18n="certifications.heading1">Certifi</span><span class="cert-heading-accent" data-i18n="certifications.heading2">cations</span></h2>
+      <p class="cert-sub" data-i18n="certifications.subtitle">Certified training validating my technical skills.</p>
+    </div>
+
+    <div class="cert-grid">
+
+      <!-- Cert 1: HKUST -->
+      <div class="cert-card reveal reveal-up" style="--delay:0.05s">
+        <div class="cert-thumbnail">
+          <img src="certif/Software Engineering Software Design and Project.jpg" alt="Software Engineering Certificate"
+            class="cert-thumb-img">
+          <div class="cert-overlay">
+            <span class="cert-badge" data-i18n="certifications.verified">Verified</span>
+          </div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-header">
+            <img src="images/logos/The Hong Kong University of Science and Technology.png" alt="HKUST Logo"
+              class="cert-issuer-logo">
+            <div class="cert-issuer-info">
+              <span class="cert-issuer">The Hong Kong University of Science and Technology</span>
+            </div>
+          </div>
+          <h3 class="cert-name">Software Engineering: Software Design and Project Management</h3>
+        </div>
+      </div>
+
+      <!-- Cert 2: Johns Hopkins -->
+      <div class="cert-card reveal reveal-up" style="--delay:0.12s">
+        <div class="cert-thumbnail">
+          <img src="certif/The Unix Workbench.jpg" alt="The Unix Workbench Certificate" class="cert-thumb-img">
+          <div class="cert-overlay">
+            <span class="cert-badge" data-i18n="certifications.verified">Verified</span>
+          </div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-header">
+            <img src="images/logos/The Johns Hopkins University.jpg" alt="Johns Hopkins Logo" class="cert-issuer-logo">
+            <div class="cert-issuer-info">
+              <span class="cert-issuer">The Johns Hopkins University</span>
+            </div>
+          </div>
+          <h3 class="cert-name">The Unix Workbench</h3>
+        </div>
+      </div>
+
+      <!-- Cert 3: EPFL -->
+      <div class="cert-card reveal reveal-up" style="--delay:0.19s">
+        <div class="cert-thumbnail">
+          <img src="certif/Introduction à la programmation orientée objet.jpg" alt="EPFL C++ Certificate"
+            class="cert-thumb-img">
+          <div class="cert-overlay">
+            <span class="cert-badge" data-i18n="certifications.verified">Verified</span>
+          </div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-header">
+            <img src="images/logos/EPFL.jpg" alt="EPFL Logo" class="cert-issuer-logo">
+            <div class="cert-issuer-info">
+              <span class="cert-issuer">EPFL (École Polytechnique Fédérale de Lausanne)</span>
+            </div>
+          </div>
+          <h3 class="cert-name">Introduction to Object-Oriented Programming (in C++)</h3>
+        </div>
+      </div>
+
+      <!-- Cert 4: Michigan Python -->
+      <div class="cert-card reveal reveal-up" style="--delay:0.26s">
+        <div class="cert-thumbnail">
+          <img src="certif/Using Python to Access Web Data.jpg" alt="Michigan Python Certificate"
+            class="cert-thumb-img">
+          <div class="cert-overlay">
+            <span class="cert-badge" data-i18n="certifications.verified">Verified</span>
+          </div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-header">
+            <img src="images/logos/University of Michigan.jpg" alt="University of Michigan Logo"
+              class="cert-issuer-logo">
+            <div class="cert-issuer-info">
+              <span class="cert-issuer">University of Michigan</span>
+            </div>
+          </div>
+          <h3 class="cert-name">Using Python to Access Web Data</h3>
+        </div>
+      </div>
+
+      <!-- Cert 5: IBM -->
+      <div class="cert-card reveal reveal-up" style="--delay:0.33s">
+        <div class="cert-thumbnail">
+          <img src="certif/Introduction to Software Engineering.jpg" alt="IBM Software Engineering Certificate"
+            class="cert-thumb-img">
+          <div class="cert-overlay">
+            <span class="cert-badge" data-i18n="certifications.verified">Verified</span>
+          </div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-header">
+            <img src="images/logos/IBM.jpg" alt="IBM Logo" class="cert-issuer-logo">
+            <div class="cert-issuer-info">
+              <span class="cert-issuer">IBM</span>
+            </div>
+          </div>
+          <h3 class="cert-name">Introduction to Software Engineering</h3>
+        </div>
+      </div>
+
+      <!-- Cert 6: Meta -->
+      <div class="cert-card reveal reveal-up" style="--delay:0.40s">
+        <div class="cert-thumbnail">
+          <img src="certif/Introduction to Front-End Development.jpg" alt="Meta Front-End Certificate"
+            class="cert-thumb-img">
+          <div class="cert-overlay">
+            <span class="cert-badge" data-i18n="certifications.verified">Verified</span>
+          </div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-header">
+            <img src="images/logos/meta.jpg" alt="Meta Logo" class="cert-issuer-logo">
+            <div class="cert-issuer-info">
+              <span class="cert-issuer">Meta</span>
+            </div>
+          </div>
+          <h3 class="cert-name">Introduction to Front-End Development</h3>
+        </div>
+      </div>
+
+      <!-- Cert 7: Michigan JS -->
+      <div class="cert-card reveal reveal-up" style="--delay:0.47s">
+        <div class="cert-thumbnail">
+          <img src="certif/Interactivity with JavaScript.jpg" alt="Michigan JavaScript Certificate"
+            class="cert-thumb-img">
+          <div class="cert-overlay">
+            <span class="cert-badge" data-i18n="certifications.verified">Verified</span>
+          </div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-header">
+            <img src="images/logos/University of Michigan.jpg" alt="University of Michigan Logo"
+              class="cert-issuer-logo">
+            <div class="cert-issuer-info">
+              <span class="cert-issuer">University of Michigan</span>
+            </div>
+          </div>
+          <h3 class="cert-name">Interactivity with JavaScript</h3>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SERVICES SECTION
+       ============================================================ -->
+  <section class="services" id="services">
+
+    <div class="section-label">
+      <span class="section-number">06</span>
+      <span class="section-divider"></span>
+      <span class="section-title-tag" data-i18n="services.sectionTitle">SERVICES</span>
+    </div>
+
+    <div class="srv-intro reveal reveal-up">
+      <h2 class="srv-heading"><span data-i18n="services.heading1">What I</span> <span class="srv-heading-accent" data-i18n="services.heading2">offer</span></h2>
+      <p class="srv-sub" data-i18n="services.subtitle">Freelance services tailored to your digital needs.</p>
+    </div>
+
+    <div class="srv-grid">
+
+      <div class="srv-card reveal reveal-up" style="--delay:0.05s">
+        <div class="srv-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <path d="M9 9l-3 3 3 3M15 9l3 3-3 3M13 7l-2 10" />
+          </svg>
+        </div>
+        <h3 class="srv-title" data-i18n="services.web.title">Web Development</h3>
+        <p class="srv-desc" data-i18n="services.web.desc">Showcase sites, web applications and custom dashboards with the best modern frameworks.</p>
+        <ul class="srv-list">
+          <li data-i18n="services.web.item1">React / Next.js / Vue.js</li>
+          <li data-i18n="services.web.item2">Responsive & animated UI</li>
+          <li data-i18n="services.web.item3">Performance & SEO</li>
+        </ul>
+        <a href="#contact" class="srv-cta" data-i18n="services.cta">Contact Me</a>
+      </div>
+
+      <div class="srv-card reveal reveal-up" style="--delay:0.12s">
+        <div class="srv-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </div>
+        <h3 class="srv-title" data-i18n="services.api.title">API Development</h3>
+        <p class="srv-desc" data-i18n="services.api.desc">Design and development of robust, documented and secure RESTful APIs for your applications.</p>
+        <ul class="srv-list">
+          <li>FastAPI / Node.js / Express</li>
+          <li>Auth JWT &amp; OAuth</li>
+          <li>Swagger Documentation</li>
+        </ul>
+        <a href="#contact" class="srv-cta" data-i18n="services.cta">Contact Me</a>
+      </div>
+
+      <div class="srv-card reveal reveal-up" style="--delay:0.19s">
+        <div class="srv-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+          </svg>
+        </div>
+        <h3 class="srv-title" data-i18n="services.perf.title">Performance Optimization</h3>
+        <p class="srv-desc" data-i18n="services.perf.desc">Audit and optimization of your applications for ultra-fast loading times and better UX.</p>
+        <ul class="srv-list">
+          <li>Lighthouse Audit</li>
+          <li>Lazy loading &amp; caching</li>
+          <li>Bundle size reduction</li>
+        </ul>
+        <a href="#contact" class="srv-cta" data-i18n="services.cta">Contact Me</a>
+      </div>
+
+      <div class="srv-card reveal reveal-up" style="--delay:0.26s">
+        <div class="srv-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="8" x2="12" y2="12" />
+            <line x1="12" y1="16" x2="12.01" y2="16" stroke-width="2.5" />
+          </svg>
+        </div>
+        <h3 class="srv-title" data-i18n="services.ai.title">AI &amp; Data Science</h3>
+        <p class="srv-desc" data-i18n="services.ai.desc">Integration of AI models into your products: classification, prediction, NLP and computer vision.</p>
+        <ul class="srv-list">
+          <li>ML / Deep Learning</li>
+          <li>Data pipeline</li>
+          <li>Model deployment</li>
+        </ul>
+        <a href="#contact" class="srv-cta" data-i18n="services.cta">Contact Me</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       TESTIMONIALS SECTION
+       ============================================================ -->
+  <section class="testimonials" id="testimonials">
+
+    <div class="section-label">
+      <span class="section-number">07</span>
+      <span class="section-divider"></span>
+      <span class="section-title-tag" data-i18n="testimonials.sectionTitle">TESTIMONIALS</span>
+    </div>
+
+    <div class="testi-intro reveal reveal-up">
+      <h2 class="testi-heading"><span data-i18n="testimonials.heading1">What they</span> <span class="testi-heading-accent" data-i18n="testimonials.heading2">say</span></h2>
+    </div>
+
+    <div class="testi-grid">
+
+      <div class="testi-card reveal reveal-up" style="--delay:0.05s">
+        <div class="testi-quote">"</div>
+        <p class="testi-text" data-i18n="testimonials.t1.text">Khalil delivered exceptional work. His interface is not only beautiful but also perfectly functional. A true professional.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background: linear-gradient(135deg, #6b8cff, #b4d7eb);">A</div>
+          <div>
+            <strong class="testi-name">Ahmed B.</strong>
+            <span class="testi-role" data-i18n="testimonials.t1.role">CEO — Tech Startup</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal reveal-up" style="--delay:0.12s">
+        <div class="testi-quote">"</div>
+        <p class="testi-text" data-i18n="testimonials.t2.text">Very rigorous and creative. The NLP project he led for our lab exceeded all our expectations in terms of accuracy and documentation.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background: linear-gradient(135deg, #4ecdc4, #44a08d);">S</div>
+          <div>
+            <strong class="testi-name">Prof. Samir K.</strong>
+            <span class="testi-role" data-i18n="testimonials.t2.role">Thesis Director — University</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal reveal-up" style="--delay:0.19s">
+        <div class="testi-quote">"</div>
+        <p class="testi-text" data-i18n="testimonials.t3.text">Our e-commerce site saw conversions increase by 40% after Khalil's redesign. Excellent attention to detail and respect for deadlines.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background: linear-gradient(135deg, #f7971e, #ffd200);">N</div>
+          <div>
+            <strong class="testi-name">Nadia M.</strong>
+            <span class="testi-role" data-i18n="testimonials.t3.role">Founder — Online Store</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+  <!-- ============================================================
+       GITHUB STATS SECTION
+       ============================================================ -->
+  <section class="github-stats" id="github-stats">
+
+    <div class="section-label">
+      <span class="section-number">08</span>
+      <span class="section-divider"></span>
+      <span class="section-title-tag" data-i18n="github.sectionTitle">GITHUB</span>
+    </div>
+
+    <div class="gh-intro reveal reveal-up">
+      <h2 class="gh-heading"><span data-i18n="github.heading1">GitHub</span> <span class="gh-heading-accent" data-i18n="github.heading2">Activity</span></h2>
+      <p class="gh-sub" data-i18n="github.subtitle">My open source activity and daily contributions.</p>
+    </div>
+
+    <div class="gh-stats-row">
+      <div class="gh-stat-card reveal reveal-up" style="--delay:0.05s">
+        <span class="gh-stat-num" data-count="342">0</span>
+        <span class="gh-stat-label" data-i18n="github.stat1">Contributions (2024)</span>
+      </div>
+      <div class="gh-stat-card reveal reveal-up" style="--delay:0.1s">
+        <span class="gh-stat-num" id="gh-repo-count" data-count="10">0</span>
+        <span class="gh-stat-label" data-i18n="github.stat2">Public Repositories</span>
+      </div>
+      <div class="gh-stat-card reveal reveal-up" style="--delay:0.15s">
+        <span class="gh-stat-num" id="gh-pull-requests" data-count="14">0</span>
+        <span class="gh-stat-label">Pull Requests</span>
+      </div>
+      <div class="gh-stat-card reveal reveal-up" style="--delay:0.2s">
+        <span class="gh-stat-num" id="gh-commits-month" data-count="86">0</span>
+        <span class="gh-stat-label" data-i18n="github.stat4">Recent Commits</span>
+      </div>
+    </div>
+
+    <!-- Contribution heatmap (visual only) -->
+    <div class="gh-heatmap-wrap reveal reveal-up" style="--delay:0.25s">
+      <p class="gh-heatmap-label" data-i18n="github.graphLabel">Contribution graph — Dynamic</p>
+      <div class="gh-heatmap" id="gh-heatmap-container">
+        <img src="https://ghchart.rshah.org/6b8cff/KvalixX" alt="GitHub Contributions Chart"
+          style="width:100%; height:auto; display:block; border-radius: 4px;" />
+      </div>
+      <div class="gh-heatmap-legend">
+        <span data-i18n="github.less">Less</span>
+        <span class="gh-legend-block" style="--c: rgba(107,140,255,0.08)"></span>
+        <span class="gh-legend-block" style="--c: rgba(107,140,255,0.2)"></span>
+        <span class="gh-legend-block" style="--c: rgba(107,140,255,0.45)"></span>
+        <span class="gh-legend-block" style="--c: rgba(107,140,255,0.7)"></span>
+        <span class="gh-legend-block" style="--c: rgba(107,140,255,1)"></span>
+        <span data-i18n="github.more">More</span>
+      </div>
+    </div>
+
+
+
+  </section>
+
+
+  <!-- ============================================================
+       CONTACT SECTION
+       ============================================================ -->
+  <section class="contact" id="contact">
+
+    <div class="section-label">
+      <span class="section-number">09</span>
+      <span class="section-divider"></span>
+      <span class="section-title-tag" data-i18n="contact.sectionTitle">CONTACT</span>
+    </div>
+
+    <div class="contact-container">
+
+      <!-- Left -->
+      <div class="contact-left reveal reveal-left">
+        <h2 class="contact-heading"><span data-i18n="contact.heading1">Let's work</span> <span class="contact-heading-accent" data-i18n="contact.heading2">together</span></h2>
+        <p class="contact-sub" data-i18n="contact.subtitle">Available for full-time opportunities, freelance missions or collaborations on ambitious projects.</p>
+
+        <div class="contact-links">
+          <!-- Email -->
+          <a href="mailto:khalillaknifli2006@gmail.com" class="contact-link" id="contact-email">
+            <div class="contact-link-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#EA4335" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M24 4.5v15c0 .85-.65 1.5-1.5 1.5H21V7.39l-9 6.22-9-6.22V21H1.5C.65 21 0 20.35 0 19.5v-15c0-.42.17-.8.45-1.08.28-.27.65-.42 1.05-.42h.75l9.75 6.75 9.75-6.75h.75c.4 0 .77.15 1.05.42.28.28.45.66.45 1.08z" />
+              </svg>
+            </div>
+            <div>
+              <span class="contact-link-label">Email</span>
+              <span class="contact-link-value">khalillaknifli2006@gmail.com</span>
+            </div>
+          </a>
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/212669043770" target="_blank" class="contact-link" id="contact-whatsapp">
+            <div class="contact-link-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .018 5.394 0 12.03c0 2.12.554 4.189 1.604 6.012l-1.704 6.223 6.366-1.669a11.84 11.84 0 005.78 1.514h.005c6.637 0 12.032-5.394 12.035-12.032a11.77 11.77 0 00-3.522-8.498z" />
+              </svg>
+            </div>
+            <div>
+              <span class="contact-link-label">WhatsApp</span>
+              <span class="contact-link-value">+212 669-043770</span>
+            </div>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/khalil-laknifli/" target="_blank" class="contact-link"
+            id="contact-linkedin">
+            <div class="contact-link-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#0077b5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+              </svg>
+            </div>
+            <div>
+              <span class="contact-link-label">LinkedIn</span>
+              <span class="contact-link-value">khalil-laknifli</span>
+            </div>
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com/KvalixX" target="_blank" class="contact-link" id="contact-github">
+            <div class="contact-link-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#181717" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
+            </div>
+            <div>
+              <span class="contact-link-label">GitHub</span>
+              <span class="contact-link-value">@KvalixX</span>
+            </div>
+          </a>
+
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/kvalix_/" target="_blank" class="contact-link" id="contact-instagram">
+            <div class="contact-link-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
+                  fill="#E1306C" />
+              </svg>
+            </div>
+            <div>
+              <span class="contact-link-label">Instagram</span>
+              <span class="contact-link-value">@kvalix_</span>
+            </div>
+          </a>
+
+          <!-- Upwork -->
+          <a href="https://www.upwork.com/freelancers/~018a0ed85ab4df4cb4" target="_blank" class="contact-link"
+            id="contact-upwork">
+            <div class="contact-link-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#14a800" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.561 3.262c-2.103 0-3.905 1.417-4.49 3.35a5.556 5.556 0 0 1-1.637-2.923H9.722v8.284a2.531 2.531 0 0 1-5.062 0V3.689H2.016v8.284a5.215 5.215 0 1 0 10.428 0V9.45c.162.776.43 1.543.834 2.222l-1.65 6.638h2.715l1.042-4.183c.957.514 2.033.793 3.176.793 3.376 0 6.12-2.744 6.12-6.12s-2.744-6.12-6.12-6.12zm0 9.53a3.409 3.409 0 1 1 0-6.818 3.409 3.409 0 0 1 0 6.818z" />
+              </svg>
+            </div>
+            <div>
+              <span class="contact-link-label">Upwork</span>
+              <span class="contact-link-value" data-i18n="contact.upworkValue">Freelance Profile</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right — Form -->
+      <div class="contact-right reveal reveal-up" style="--delay:0.1s">
+        <form class="contact-form" id="contact-form" autocomplete="off" novalidate>
+          <!-- Honeypot field to prevent spam bots -->
+          <div style="position:absolute; left:-9999px;" aria-hidden="true">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="contact-name" data-i18n="contact.form.name">Name</label>
+              <input type="text" id="contact-name" name="name" class="form-input" data-i18n-placeholder="contact.form.namePlaceholder" placeholder="Your name" required autocomplete="name" maxlength="100" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-mail">Email</label>
+              <input type="email" id="contact-mail" name="email" class="form-input" placeholder="your@email.com"
+                required autocomplete="email" autocapitalize="off" maxlength="254" inputmode="email" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-subject" data-i18n="contact.form.subject">Subject</label>
+            <input type="text" id="contact-subject" name="subject" class="form-input"
+              data-i18n-placeholder="contact.form.subjectPlaceholder" placeholder="Subject of your message" autocomplete="off" maxlength="200" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="contact-message" data-i18n="contact.form.message">Message</label>
+            <textarea id="contact-message" name="message" class="form-textarea" rows="5"
+              data-i18n-placeholder="contact.form.messagePlaceholder" placeholder="Describe your project or request..." required autocomplete="off" maxlength="5000"></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="form-submit-btn">
+            <span data-i18n="contact.form.send">Send Message</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13" />
+              <polygon points="22 2 15 22 11 13 2 9 22 2" />
+            </svg>
+          </button>
+          <div class="form-success" id="form-success">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            <span data-i18n="contact.form.success">Message sent! I will reply within 24 hours.</span>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" id="footer">
+    <div class="footer-container">
+
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="footer-logo-top" data-i18n="logo.top">LAKNIFLI</span>
+            <span class="footer-logo-bottom" data-i18n="logo.bottom">KHALIL</span>
+          </div>
+          <p class="footer-tagline" data-i18n="footer.tagline">Full-Stack Developer &amp; AI Engineer.<br />Building the future, one line at a time.</p>
+        </div>
+
+        <div class="footer-nav-col">
+          <p class="footer-col-title" data-i18n="footer.navTitle">Navigation</p>
+          <ul class="footer-links">
+            <li><a href="#about" data-i18n="nav.about">About</a></li>
+            <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+            <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+            <li><a href="#certifications" data-i18n="nav.certifications">Certifications</a></li>
+            <li><a href="#services" data-i18n="nav.services">Services</a></li>
+            <li><a href="#github-stats">GitHub Activity</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Contact Me</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <p class="footer-col-title" data-i18n="footer.expertiseTitle">Expertise</p>
+          <ul class="footer-links">
+            <li><a href="#services" data-i18n="footer.expertise1">Web Development</a></li>
+            <li><a href="#services">APIs & Backend</a></li>
+            <li><a href="#services" data-i18n="footer.expertise3">Artificial Intelligence</a></li>
+            <li><a href="#services" data-i18n="footer.expertise4">Performance Optimization</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <p class="footer-col-title">Réseaux</p>
+          <div class="footer-socials">
+            <a href="https://github.com/KvalixX" target="_blank" class="footer-social-btn" id="footer-github"
+              aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/khalil-laknifli/" target="_blank" class="footer-social-btn"
+              id="footer-linkedin" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#0077b5" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/kvalix_/" target="_blank" class="footer-social-btn" id="footer-instagram"
+              aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#E1306C" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg>
+            </a>
+            <a href="https://wa.me/212669043770" target="_blank" class="footer-social-btn" id="footer-whatsapp"
+              aria-label="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.414 0 .018 5.394 0 12.03c0 2.12.554 4.189 1.604 6.012l-1.704 6.223 6.366-1.669a11.84 11.84 0 005.78 1.514h.005c6.637 0 12.032-5.394 12.035-12.032a11.77 11.77 0 00-3.522-8.498z" />
+              </svg>
+            </a>
+            <a href="https://www.upwork.com/freelancers/~018a0ed85ab4df4cb4" target="_blank" class="footer-social-btn"
+              id="footer-upwork" aria-label="Upwork">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#14a800" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.561 3.262c-2.103 0-3.905 1.417-4.49 3.35a5.556 5.556 0 0 1-1.637-2.923H9.722v8.284a2.531 2.531 0 0 1-5.062 0V3.689H2.016v8.284a5.215 5.215 0 1 0 10.428 0V9.45c.162.776.43 1.543.834 2.222l-1.65 6.638h2.715l1.042-4.183c.957.514 2.033.793 3.176.793 3.376 0 6.12-2.744 6.12-6.12s-2.744-6.12-6.12-6.12zm0 9.53a3.409 3.409 0 1 1 0-6.818 3.409 3.409 0 0 1 0 6.818z" />
+              </svg>
+            </a>
+            <a href="mailto:khalillaknifli2006@gmail.com" class="footer-social-btn" id="footer-email"
+              aria-label="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#EA4335" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M24 4.5v15c0 .85-.65 1.5-1.5 1.5H21V7.39l-9 6.22-9-6.22V21H1.5C.65 21 0 20.35 0 19.5v-15c0-.42.17-.8.45-1.08.28-.27.65-.42 1.05-.42h.75l9.75 6.75 9.75-6.75h.75c.4 0 .77.15 1.05.42.28.28.45.66.45 1.08z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Laknifli Khalil — Tous droits réservés.</p>
+        <p class="footer-made">Conçu &amp; développé avec ❤️ par Khalil</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
