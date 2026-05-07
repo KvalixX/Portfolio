@@ -355,6 +355,7 @@ body {
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .nav-cta:hover {
@@ -401,6 +402,9 @@ body {
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
     border-radius: 0;
     border: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
   }
 
   .header-nav.active {
@@ -1534,6 +1538,20 @@ html[lang="ar"] .footer-tagline {
   text-align: right;
 }
 
+/* RTL spacing for Arabic */
+html[lang="ar"] .nav-list {
+  gap: 32px;
+}
+
+html[lang="ar"] .lang-switcher {
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+html[lang="ar"] .nav-cta {
+  padding: 10px 22px;
+}
+
 /* Mobile adjustments */
 @media (max-width: 1024px) {
   .lang-switcher {
@@ -2010,8 +2028,22 @@ html[lang="ar"] .footer-tagline {
 }
 
 .skill-tag i {
-  font-size: 18px;
+  font-size: 20px;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  line-height: 1;
+  font-family: "devicon", sans-serif !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .skill-tag svg {
