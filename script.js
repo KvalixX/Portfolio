@@ -1051,13 +1051,13 @@
 
     // Update current language button
     const langData = {
-      en: { flag: '🇬🇧', code: 'EN' },
-      fr: { flag: '🇫🇷', code: 'FR' },
-      es: { flag: '🇪🇸', code: 'ES' },
-      ar: { flag: '🇸🇦', code: 'AR' }
+      en: { flag: 'images/flags/gb.png', code: 'EN' },
+      fr: { flag: 'images/flags/fr.png', code: 'FR' },
+      es: { flag: 'images/flags/es.png', code: 'ES' },
+      ar: { flag: 'images/flags/sa.png', code: 'AR' }
     };
 
-    currentFlag.textContent = langData[lang].flag;
+    currentFlag.innerHTML = '<img src="' + langData[lang].flag + '" alt="' + langData[lang].code + '" class="flag-icon" />';
     currentCode.textContent = langData[lang].code;
 
     // Update active state in dropdown

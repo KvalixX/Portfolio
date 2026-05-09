@@ -776,10 +776,15 @@ body {
 }
 
 @media (max-width: 1024px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+  }
+
   .hero-content {
     grid-template-columns: 1fr;
-    padding: 120px 40px 100px;
-    gap: 40px;
+    padding: 100px 24px 60px;
+    gap: 30px;
   }
 
   .hero-left {
@@ -790,7 +795,7 @@ body {
   }
 
   .hero-title {
-    font-size: clamp(40px, 10vw, 60px);
+    font-size: clamp(36px, 10vw, 52px);
   }
 
   .hero-desc {
@@ -799,13 +804,21 @@ body {
 
   .hero-right {
     order: 1;
-    height: 50vh;
-    min-height: 400px;
+    height: 40vh;
+    min-height: 280px;
   }
 
   .portrait-wrap {
-    width: clamp(260px, 50vw, 400px);
+    width: clamp(220px, 50vw, 350px);
     height: 100%;
+  }
+
+  .side-text {
+    display: none;
+  }
+
+  .scroll-hint {
+    display: none;
   }
 }
 
@@ -826,7 +839,13 @@ body {
   }
 
   .hero-content {
-    padding: 100px 24px 80px;
+    padding: 80px 16px 40px;
+    gap: 20px;
+  }
+
+  .hero-right {
+    height: 35vh;
+    min-height: 220px;
   }
 }
 
@@ -1412,8 +1431,18 @@ canvas {
 }
 
 .lang-flag {
+  display: flex;
+  align-items: center;
   font-size: 16px;
   line-height: 1;
+}
+
+.flag-icon {
+  width: 20px;
+  height: 14px;
+  border-radius: 2px;
+  object-fit: cover;
+  display: block;
 }
 
 .lang-code {
@@ -1474,8 +1503,16 @@ canvas {
 }
 
 .lang-option-flag {
+  display: flex;
+  align-items: center;
   font-size: 18px;
   line-height: 1;
+  min-width: 24px;
+}
+
+.lang-option-flag .flag-icon {
+  width: 22px;
+  height: 15px;
 }
 
 .lang-option-name {
@@ -1561,14 +1598,23 @@ html[lang="ar"] .nav-cta {
 
   .lang-dropdown {
     position: static;
-    opacity: 1;
-    visibility: visible;
+    opacity: 0;
+    visibility: hidden;
     transform: none;
     background: transparent;
     border: none;
     box-shadow: none;
     padding: 0;
     margin-top: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, max-height 0.3s ease;
+  }
+
+  .lang-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    max-height: 300px;
   }
 
   .lang-option {
