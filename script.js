@@ -142,23 +142,69 @@
 
   animateParallax();
 
-  /* ── ROBOT PORTRAIT REVEAL ────────────────────────────── */
+  /* ── PREMIUM PORTRAIT REVEAL ───────────────────────────── */
   const portraitRobot = document.getElementById('portrait-robot');
   const scannerLine = document.getElementById('scanner-line');
   const scannerHud = document.getElementById('scanner-hud');
 
+  let hovering = false;
+  let cursorX = 0, cursorY = 0;
+  let smoothCursorX = 0, smoothCursorY = 0;
+  let revealOpacity = 0;
+  let targetOpacity = 0;
+
   if (portraitWrap && portraitRobot) {
-    portraitWrap.addEventListener('mousemove', (e) => {
-      const rect = portraitWrap.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      // Set variables on parent wrap so all HUD elements can use them
-      portraitWrap.style.setProperty('--mouse-x', `${x}px`);
-      portraitWrap.style.setProperty('--mouse-y', `${y}px`);
-
+    // Enter hover state
+    portraitWrap.addEventListener('mouseenter', () => {
+      hovering = true;
+      targetOpacity = 1;
     });
 
+    // Exit hover state
+    portraitWrap.addEventListener('mouseleave', () => {
+      hovering = false;
+      targetOpacity = 0;
+    });
+
+    // Track cursor position for progressive reveal
+    portraitWrap.addEventListener('mousemove', (e) => {
+      const rect = portraitWrap.getBoundingClientRect();
+      
+      // Get cursor position relative to portrait
+      cursorX = Math.max(0, Math.min(rect.width, e.clientX - rect.left));
+      cursorY = Math.max(0, Math.min(rect.height, e.clientY - rect.top));
+
+      // Calculate distance from center for progressive reveal
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const distX = (cursorX - centerX) / centerX;
+      const distY = (cursorY - centerY) / centerY;
+      const distance = Math.sqrt(distX * distX + distY * distY);
+      
+      // Progressive opacity based on distance (0.2 to 1.0)
+      if (hovering) {
+        targetOpacity = Math.max(0.15, 1 - distance * 0.45);
+      }
+    });
+
+    // Smooth animation loop for cursor tracking and reveal
+    function animateReveal() {
+      // Smooth cursor position
+      smoothCursorX += (cursorX - smoothCursorX) * 0.12;
+      smoothCursorY += (cursorY - smoothCursorY) * 0.12;
+
+      // Smooth reveal opacity with easing
+      revealOpacity += (targetOpacity - revealOpacity) * 0.08;
+
+      // Update CSS variables with smooth values
+      portraitWrap.style.setProperty('--cursor-x', `${smoothCursorX}px`);
+      portraitWrap.style.setProperty('--cursor-y', `${smoothCursorY}px`);
+      portraitWrap.style.setProperty('--reveal-opacity', revealOpacity);
+
+      requestAnimationFrame(animateReveal);
+    }
+
+    animateReveal();
   }
 
   /* ── SCROLL: redraw topo contours with offset ──────────── */
